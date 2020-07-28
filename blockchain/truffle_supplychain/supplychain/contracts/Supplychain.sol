@@ -1,7 +1,7 @@
 pragma solidity 0.5.16;
 
 /* This is contract of Supplychain */
-contract supplychain{
+contract Supplychain{
     address public manufacturer; /* declare manufacturer address  */
     uint256 productUniqueId; /* declare productUniqueId*/
     
@@ -143,18 +143,8 @@ contract supplychain{
                 ProductIdList[verifyProductId]._partnerAddress, 
                 ProductIdList[verifyProductId]._productHandle);
         }
-        }
+    }
         
-    // function updatePro(uint256 _productId, bytes32 _productState, bytes32 _productTimeStamp, address _partnerAddress, bytes32 _productHandle) public onlyPartners {
-    //     for(uint256 i; i<product.length; i++) {
-    //         if(product[i]._productId == _productId){
-    //             (product[_productId]._productState).push(_productState);
-    //             (product[_productId]._productTimeStamp).push(_productTimeStamp);
-    //             (product[_productId]._partnerAddress).push(_partnerAddress);
-    //             (product[_productId]._productHandle).push(_productHandle);
-    //         }
-    //     }
-    // }
     /*update product details with productIdlist --onlypartners can update the products details  */
     function updateProduct(uint256 _productId, bytes32 _productName, bytes32 _productState,bytes32 _productTimeStamp, address _partnerAddress, bytes32 _productHandle) public onlyPartners() {
         ProductIdList[_productId]._productName = _productName;
